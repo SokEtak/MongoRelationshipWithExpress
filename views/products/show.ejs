@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+</head>
+<body>
+    <h1>Product Detail</h1>
+    <h1>Product Name:<%= product.name %></h1>
+    <h1>Product Price:$<span style="color: green;"><%= product.price %></span></h1>
+    <h1>Product Category: <a href="/products?category=<%= product.category %>"><%= product.category %></a></h1>
+    <h2>Farm: <%= product.farm ? product.farm.name : 'No farm available' %></h2>
+    <a href="/products">Back To Index</a>         
+    <a href="/products/<%= product._id %>/edit">Edit</a>  
+            <form action="/products/<%= product._id %>?_method=DELETE" method="POST">
+                <button>DELETE</button>
+            </form>       
+
+</body>
+</html>
